@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "pytune-helpers-images"
+version = "0.1.0"
+description = "Image & EXIF helpers for PyTune (exifread, pillow, optional HEIF)."
+authors = ["Gabriel de Fombelle <gabriel.de.fombelle@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "pytune_helpers_images"}]
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+requests = "^2.32.0"
+exifread = "^3.3.2"
+pillow = "^11.2.1"
+
+# Internal dev deps (monorepo)
+simple-logger = { path = "../../packages/simple_logger", develop = true }
+pytune-configuration = { path = "../../packages/pytune_configuration", develop = true }
+pytune-data = { path = "../../packages/pytune_data", develop = true }
+
+# Optional HEIF support (referenced via extras below)
+pillow-heif = { version = "^1.0.0" }
+
+[tool.poetry.extras]
+heif = ["pillow-heif"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+mypy = "^1.11.1"
+ruff = "^0.6.8"
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
