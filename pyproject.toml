@@ -2,7 +2,7 @@
 name = "pytune_helpers_images"
 version = "0.0.0"
 description = "PyTune image helper utilities"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 
 [tool.poetry]
 name = "pytune_helpers_images"
@@ -14,7 +14,7 @@ readme = "README.md"
 packages = [{ include = "pytune_helpers_images"}]
 
 [tool.poetry.dependencies]
-python =">=3.12,<4.0"
+python = ">=3.12,<3.13"
 requests = "^2.32.0"
 exifread = "^3.3.2"
 pillow = "^11.2.1"
