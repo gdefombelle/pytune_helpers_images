@@ -1,5 +1,11 @@
+[project]
+name = "pytune_helpers_images"
+version = "0.0.0"
+description = "PyTune image helper utilities"
+requires-python = ">=3.12"
+
 [tool.poetry]
-name = "pytune-helpers-images"
+name = "pytune_helpers_images"
 version = "0.1.0"
 description = "Image & EXIF helpers for PyTune (exifread, pillow, optional HEIF)."
 authors = ["Gabriel de Fombelle <gabriel.de.fombelle@gmail.com>"]
@@ -8,15 +14,15 @@ readme = "README.md"
 packages = [{ include = "pytune_helpers_images"}]
 
 [tool.poetry.dependencies]
-python = ">=3.12,<3.13"
+python =">=3.12,<4.0"
 requests = "^2.32.0"
 exifread = "^3.3.2"
 pillow = "^11.2.1"
 
 # Internal dev deps (monorepo)
-simple-logger = { path = "../../packages/simple_logger", develop = true }
-pytune-configuration = { path = "../../packages/pytune_configuration", develop = true }
-pytune-data = { path = "../../packages/pytune_data", develop = true }
+pytune_configuration = { git = "https://github.com/gdefombelle/pytune_configuration.git", branch = "main"}
+simple_logger = { git = "https://github.com/gdefombelle/simple_logger.git", branch = "main"}
+pytune_data = { git  = "https://github.com/gdefombelle/pytune_data.git", branch = "main"}
 
 # Optional HEIF support (referenced via extras below)
 pillow-heif = { version = "^1.0.0" }
